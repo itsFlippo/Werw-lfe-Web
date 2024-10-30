@@ -1,0 +1,141 @@
+/* Hintergrundbild */
+body {
+    font-family: 'Garamond', serif;
+    background: url('Hintergrundbild/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0d0d0d; /* Fallback-Farbe */
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    position: relative; /* Ermöglicht das Positionieren des Overlays */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Schwarzes Overlay mit 50% Deckkraft */
+    z-index: -1; /* Overlay hinter den Inhalt legen */
+}
+
+/* Einbindung der lokalen Schriftart */
+@font-face {
+    font-family: 'Werewolf';
+    src: url('schriftart/werewolf.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Überschrift (Werwölfe) */
+h1 {
+    font-family: 'Werewolf', sans-serif; /* Werewolf-Schriftart anwenden */
+    font-size: 7em;
+    color: #d11c03;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 20px;
+    margin-bottom: 0; /* Entfernt unteren Abstand */
+}
+
+/* Unterüberschrift (Rollenauswahl) */
+h2.rollenauswahl-title {
+    font-size: 2em;
+    color: #d11c03;
+    text-shadow: 1px 1px 3px #000;
+    margin-top: 60px;
+    padding-bottom: 0;
+    border-bottom: none; /* Linie entfernt */
+}
+
+/* Gruppentitel für jede Rollen-Kategorie */
+.group-title {
+    color: #b50000;
+    font-size: 2.0em;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px #000;
+    text-align: center;
+}
+
+/* Container für die Rollengruppen */
+.role-group {
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+/* Rollenbilder als Checkboxen, 8 Bilder pro Reihe */
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 Bilder pro Reihe */
+    gap: 60px;
+    justify-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Rolle (Bild als Checkbox) */
+.role-card label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Checkbox-Input ausblenden */
+.role-card input[type="checkbox"] {
+    display: none;
+}
+
+/* Bildgröße und Hover-Effekte */
+.role-card img {
+    width: 80%; /* Skaliert das Bild auf 80% der Originalgröße */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Stil für ausgewählte Rolle */
+.role-card input[type="checkbox"]:checked + img {
+    transform: scale(1.2); /* Leichte Vergrößerung bei Auswahl */
+    box-shadow: 0 0 10px 5px #d11c03; /* Leuchtender roter Rahmen */
+}
+
+/* Stil für deaktivierte Rollen (bald verfügbar) */
+.role-card.soon {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+.role-card.soon img {
+    filter: grayscale(100%);
+}
+.role-card.soon input[type="checkbox"] {
+    pointer-events: none; /* Deaktiviert Interaktion */
+}
+
+/* Kombinierter Start/Stop-Button */
+button.start-stop-button {
+    background-color: #d11c03;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1.5em;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover-Effekt */
+button.start-stop-button:hover {
+    background-color: #a50c00;
+    transform: scale(1.05);
+}
+
+/* Ausgegrauter Zustand */
+button.start-stop-button.disabled {
+    background-color: #555;
+    color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
