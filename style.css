@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 20px 20px 20px 20px;
     position: relative; /* Ermöglicht das Positionieren des Overlays */
-    -webkit-backface-visibility: hidden; /* Safari Optimierung für Rendering */
+    -webkit-backface-visibility: hidden;
 }
 
 header {
