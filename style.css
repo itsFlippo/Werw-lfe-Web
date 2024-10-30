@@ -143,3 +143,21 @@ button.start-stop-button.disabled {
     color: #e0e0e0;
     -webkit-text-size-adjust: 100%; /* Safari Textgröße fixieren */
 }
+
+/* Anpassen des Grids und der Karten für mobile Geräte */
+@media (max-width: 768px) {
+    .role-grid {
+        max-width: 100%; /* Grid-Container nimmt den gesamten Bildschirm ein */
+        padding: 10px; /* Weniger Innenabstand */
+        gap: 20px; /* Weniger Abstand zwischen den Karten */
+    }
+
+    .role-card {
+        width: 100%; /* Karten ebenfalls volle Breite */
+    }
+
+    .role-card img {
+        width: 100%; /* Bilder nutzen die volle Breite der Karte */
+        min-width: 150px; /* Feste Mindestbreite für die Bilder */
+    }
+}
