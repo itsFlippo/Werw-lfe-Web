@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 20px 20px 20px 20px;
     position: relative; /* Ermöglicht das Positionieren des Overlays */
+    -webkit-backface-visibility: hidden; /* Safari Optimierung für Rendering */
 }
 
 header {
@@ -17,10 +18,11 @@ header {
 }
 
 .header-image {
-    max-width: 35%; /* Bild responsiv machen */
-    height: auto; /* Höhe automatisch anpassen */
-    opacity: 1; /* 50% Transparenz */
-    transition: opacity 0.3s ease; /* Sanfter Übergang für Transparenzänderung */
+    max-width: 60%; /* Bild responsiv machen */
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease; /* Safari Transition */
 }
 
 body::before {
@@ -32,6 +34,8 @@ body::before {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Schwarzes Overlay mit 50% Deckkraft */
     z-index: -1; /* Overlay hinter den Inhalt legen */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); /* Safari Optimierung */
 }
 
 /* Einbindung der lokalen Schriftart */
@@ -48,11 +52,11 @@ body::before {
     padding: 0;
 }
 
-/* Rollenbilder als Checkboxen, 8 Bilder pro Reihe */
+/* Rollenbilder als Checkboxen */
 .role-grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr); /* 8 Bilder pro Reihe */
-    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 80px;
     justify-items: center;
     max-width: 75%;
     margin: 0 auto;
@@ -72,18 +76,21 @@ body::before {
 
 /* Bildgröße und Hover-Effekte */
 .role-card img {
-    width: 80%; /* Skaliert das Bild auf 80% der Originalgröße */
+    width: 80%;
     height: auto;
     border-radius: 8px;
-    opacity: 0.5; /* Bilder, die noch nicht ausgewählt sind, zu 75% transparent */
+    opacity: 0.5;
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    -webkit-transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease; /* Safari Transition */
+    -webkit-backface-visibility: hidden; /* Safari Optimierung */
 }
 
 /* Stil für ausgewählte Rolle */
 .role-card input[type="checkbox"]:checked + img {
-    opacity: 1; /* Vollständig sichtbar, wenn ausgewählt */
-    transform: scale(1.2); /* Leichte Vergrößerung bei Auswahl */
-    box-shadow: 0 0 10px 5px #d11c03; /* Leuchtender roter Rahmen */
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px 5px #d11c03;
+    -webkit-transform: scale(1.2); /* Safari Optimierung */
 }
 
 /* Stil für deaktivierte Rollen (bald verfügbar) */
@@ -95,7 +102,7 @@ body::before {
     filter: grayscale(100%);
 }
 .role-card.soon input[type="checkbox"] {
-    pointer-events: none; /* Deaktiviert Interaktion */
+    pointer-events: none;
 }
 
 /* Kombinierter Start/Stop-Button */
@@ -109,12 +116,13 @@ button.start-stop-button {
     border-radius: 8px;
     margin-top: 40px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    -webkit-transition: background-color 0.3s ease, transform 0.2s ease; /* Safari Transition */
 }
 
-/* Hover-Effekt */
 button.start-stop-button:hover {
     background-color: #a50c00;
     transform: scale(1.05);
+    -webkit-transform: scale(1.05); /* Safari Transform */
 }
 
 /* Ausgegrauter Zustand */
@@ -123,13 +131,15 @@ button.start-stop-button.disabled {
     color: #ccc;
     cursor: not-allowed;
     transform: none;
+    -webkit-transform: none; /* Safari Transform */
 }
 
 .footer-text {
     text-align: center;
     margin-top: 100px;
-    opacity: 0.5; /* 50% Transparenz */
-    font-family: 'Roboto', Arial, sans-serif; /* Moderne Schriftart */
-    font-size: 0.7em; /* Standard-Schriftgröße */
-    color: #e0e0e0; /* Helle Farbe für gute Lesbarkeit */
+    opacity: 0.5;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 0.7em;
+    color: #e0e0e0;
+    -webkit-text-size-adjust: 100%; /* Safari Textgröße fixieren */
 }
