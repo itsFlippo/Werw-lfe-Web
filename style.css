@@ -7,8 +7,20 @@ body {
     color: #e0e0e0;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     position: relative; /* Ermöglicht das Positionieren des Overlays */
+}
+
+header {
+    text-align: center; /* Zentriert das Bild im Header */
+    margin-bottom: 30px; /* Abstand zum nächsten Element */
+}
+
+.header-image {
+    max-width: 35%; /* Bild responsiv machen */
+    height: auto; /* Höhe automatisch anpassen */
+    opacity: 1; /* 50% Transparenz */
+    transition: opacity 0.3s ease; /* Sanfter Übergang für Transparenzänderung */
 }
 
 body::before {
@@ -30,35 +42,6 @@ body::before {
     font-style: normal;
 }
 
-/* Überschrift (Werwölfe) */
-h1 {
-    font-family: 'Werewolf', sans-serif; /* Werewolf-Schriftart anwenden */
-    font-size: 7em;
-    color: #d11c03;
-    text-shadow: 2px 2px 4px #000;
-    margin-top: 20px;
-    margin-bottom: 0; /* Entfernt unteren Abstand */
-}
-
-/* Unterüberschrift (Rollenauswahl) */
-h2.rollenauswahl-title {
-    font-size: 2em;
-    color: #d11c03;
-    text-shadow: 1px 1px 3px #000;
-    margin-top: 60px;
-    padding-bottom: 0;
-    border-bottom: none; /* Linie entfernt */
-}
-
-/* Gruppentitel für jede Rollen-Kategorie */
-.group-title {
-    color: #b50000;
-    font-size: 2.0em;
-    margin-top: 20px;
-    text-shadow: 1px 1px 3px #000;
-    text-align: center;
-}
-
 /* Container für die Rollengruppen */
 .role-group {
     margin-bottom: 30px;
@@ -68,10 +51,10 @@ h2.rollenauswahl-title {
 /* Rollenbilder als Checkboxen, 8 Bilder pro Reihe */
 .role-grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 8 Bilder pro Reihe */
-    gap: 60px;
+    grid-template-columns: repeat(9, 1fr); /* 8 Bilder pro Reihe */
+    gap: 30px;
     justify-items: center;
-    max-width: 90%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
@@ -92,11 +75,13 @@ h2.rollenauswahl-title {
     width: 80%; /* Skaliert das Bild auf 80% der Originalgröße */
     height: auto;
     border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    opacity: 0.5; /* Bilder, die noch nicht ausgewählt sind, zu 75% transparent */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 /* Stil für ausgewählte Rolle */
 .role-card input[type="checkbox"]:checked + img {
+    opacity: 1; /* Vollständig sichtbar, wenn ausgewählt */
     transform: scale(1.2); /* Leichte Vergrößerung bei Auswahl */
     box-shadow: 0 0 10px 5px #d11c03; /* Leuchtender roter Rahmen */
 }
@@ -138,4 +123,13 @@ button.start-stop-button.disabled {
     color: #ccc;
     cursor: not-allowed;
     transform: none;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 100px;
+    opacity: 0.5; /* 50% Transparenz */
+    font-family: 'Roboto', Arial, sans-serif; /* Moderne Schriftart */
+    font-size: 0.7em; /* Standard-Schriftgröße */
+    color: #e0e0e0; /* Helle Farbe für gute Lesbarkeit */
 }

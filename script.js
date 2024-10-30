@@ -1,7 +1,7 @@
 // Hintergrundmusik und Variablen
 let backgroundMusic = new Audio("hintergrundmusik/hintergrund.mp3"); // Pfad zur Hintergrundmusik
 backgroundMusic.loop = true;
-backgroundMusic.volume = 0.4; // Lautstärke auf 50%
+backgroundMusic.volume = 0.6; // Lautstärke auf 50%
 
 // Reihenfolge der Zeiten und Rollen in der Abspielreihenfolge
 const audioSequence = [
@@ -13,9 +13,9 @@ const audioSequence = [
     { audio: null, roles: ["der-graf", "renfield", "infizierter", "venus", "anstifterin", "priester", "meuchler"], condition: () => hasRole(["der-graf", "renfield", "infizierter", "venus", "anstifterin", "priester", "meuchler"]) }, // 6-12
     { audio: "marken", roles: [], condition: () => hasRole(["der-graf", "renfield", "infizierter", "venus", "anstifterin", "priester", "meuchler"]) }, // 13
     { audio: null, roles: ["verliebte"], condition: () => hasRole(["verliebte"]) }, // 14
-    { audio: "hoellenzeit", roles: [], condition: () => hasRole(["knochenleser", "hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer", "todesengel"]) }, // 15
+    { audio: "hoellenzeit", roles: [], condition: () => hasRole(["knochenleser_1", "hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer_1", "todesengel", "knochenleser_2"]) }, // 15
     { audio: "daemonen", roles: [], condition: () => hasRole(["hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer"]) }, // 16
-    { audio: null, roles: ["knochenleser_1", "hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer_1", "todesengel", "knochenleser_2"], condition: () => hasRole(["knochenleser", "hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer", "todesengel"]) }, // 17-23
+    { audio: null, roles: ["knochenleser_1", "hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer_1", "todesengel", "knochenleser_2"], condition: () => hasRole(["knochenleser_1", "hoellenfuerst", "flammenbeschwoerer", "seelendieb", "schattenlaeufer", "todesengel", "knochenleser_2"]) }, // 17-23
     { audio: "nacht", roles: [], alwaysPlay: true }, // 24
     { audio: null, roles: ["wache"], condition: () => hasRole(["wache"]) }, // 25
     { audio: "werwoelfe", roles: [], condition: () => hasRole(["alphawolf", "sehender-wolf", "traumwolf", "werwolf"]) }, // 26
@@ -152,7 +152,8 @@ function playRoleSequence(roles, callback) {
         const role = roles[roleIndex];
         roleIndex++; // Erhöht vor dem Überprüfen, damit übersprungen wird, falls Bedingung nicht erfüllt ist
 
-        const checkbox = document.querySelector(`input[type='checkbox'][value='${role === "knochenleser_1" || role === "knochenleser_2" ? "knochenleser" : role}']`);
+        // Checkbox-Element für die aktuelle Rolle suchen
+        const checkbox = document.querySelector(`input[type='checkbox'][value='${role}']`);
 
         if (checkbox && checkbox.checked) {
             console.log(`Spiele Rolle: ${role}`);
@@ -167,3 +168,27 @@ function playRoleSequence(roles, callback) {
 
     playNextRole();
 }
+
+// Event-Listener für die Haupt-Checkbox "Knochenleser"
+document.getElementById("knochenleser_1").addEventListener("change", function() {
+    const secondCheckbox = document.getElementById("knochenleser_2");
+
+    // Wenn die erste Checkbox ausgewählt ist, aktiviere die zweite
+    if (this.checked) {
+        secondCheckbox.checked = true; // Aktiviere die zweite Checkbox im Hintergrund
+    } else {
+        secondCheckbox.checked = false; // Deaktiviere die zweite Checkbox im Hintergrund
+    }
+});
+
+// Event-Listener für die Haupt-Checkbox "Schattenläufer"
+document.getElementById("schattenlaeufer_1").addEventListener("change", function() {
+    const secondCheckbox = document.getElementById("schattenlaeufer_2");
+
+    // Wenn die erste Checkbox ausgewählt ist, aktiviere die zweite
+    if (this.checked) {
+        secondCheckbox.checked = true; // Aktiviere die zweite Checkbox im Hintergrund
+    } else {
+        secondCheckbox.checked = false; // Deaktiviere die zweite Checkbox im Hintergrund
+    }
+});

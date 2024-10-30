@@ -6,11 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Überschrift und Untertitel -->
-<h1 style="text-align: center;">Werwolf</h1>
 
-<!-- Rollenauswahl Titel -->
-<h2 class="rollenauswahl-title">Wählt eure Rollen aus!</h2>
+    <!-- Header-Bereich -->
+    <header>
+        <img src="Images/rollenauswahl.png" alt="Werwölfe - Schatten der Hölle" class="header-image">
+    </header>
+
+    <form id="role-selection">
+        <!-- Der Rest deines Codes bleibt unverändert -->
+    </form>
 
     <form id="role-selection">
         <div class="role-grid">
@@ -77,13 +81,13 @@
             </div>
             <div class="role-card">
                 <label>
-                    <input type="checkbox" name="role" value="knochenleser_1">
+                    <input type="checkbox" name="role" value="knochenleser_1" id="knochenleser_1">
                     <img src="Karten/knochenleser.jpg" alt="Knochenleser">
                 </label>
             </div>
-            <div class="role-card">
+            <div class="role-card" style="display:none;"> <!-- Zweite Karte ausgeblendet -->
                 <label>
-                    <input type="checkbox" name="role" value="knochenleser_2">
+                    <input type="checkbox" name="role" value="knochenleser_2" id="knochenleser_2">
                     <img src="Karten/knochenleser.jpg" alt="Knochenleser">
                 </label>
             </div>
@@ -107,16 +111,16 @@
             </div>
             <div class="role-card">
                 <label>
-                    <input type="checkbox" name="role" value="schattenlaeufer_1">
+                    <input type="checkbox" name="role" value="schattenlaeufer_1" id="schattenlaeufer_1">
                     <img src="Karten/schattenlaeufer.jpg" alt="Schattenläufer">
                 </label>
             </div>
-            <div class="role-card">
+            <div class="role-card" style="display:none;"> <!-- Zweite Karte ausgeblendet -->
                 <label>
-                    <input type="checkbox" name="role" value="schattenlaeufer_2">
+                    <input type="checkbox" name="role" value="schattenlaeufer_2" id="schattenlaeufer_2">
                     <img src="Karten/schattenlaeufer.jpg" alt="Schattenläufer">
                 </label>
-            </div>
+            </div>            
             <div class="role-card">
                 <label>
                     <input type="checkbox" name="role" value="todesengel">
@@ -351,48 +355,6 @@
                     <img src="Karten/sensenmann.jpg" alt="Sensenmann">
                 </label>
             </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="gerber">
-                    <img src="Karten/gerber.jpg" alt="Gerber">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="dorfbewohner">
-                    <img src="Karten/dorfbewohner.jpg" alt="Dorfbewohner">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="leibwaechter">
-                    <img src="Karten/leibwaechter.jpg" alt="Leibwächter">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="prinz">
-                    <img src="Karten/prinz.jpg" alt="Prinz">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="vampir">
-                    <img src="Karten/vampir.jpg" alt="Vampir">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="der-meister">
-                    <img src="Karten/dermeister.jpg" alt="Der Meister">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="traumwolf">
-                    <img src="Karten/traumwolf.jpg" alt="Traumwolf">
-                </label>
-            </div>
         </div>
 
     <!-- Start-/Stop-Button Container -->
@@ -400,12 +362,12 @@
         <button type="button" id="start-stop-button" class="start-stop-button">Start</button>
     </div>
 
-    <!-- Abschluss-Text -->
-    <footer style="text-align: center; margin-top: 40px;">
-        <p>Dieses Projekt ist eine Open-Source und beinhaltet geschützte Lizenzen.</p>
-        <p>Angepasst an das Original-Kartenspiel "Werwölfe - Vollmondnacht" von Ravensburger.</p>
-        <p>Version wurde von Philip Grieger entwickelt. (© 2024).</p>
-    </footer>
+<!-- Abschluss-Text -->
+<footer class="footer-text">
+    <p>Dieses Projekt ist eine Open-Source und beinhaltet geschützte Lizenzen.</p>
+    <p>Angepasst an das Original-Kartenspiel "Werwölfe - Vollmondnacht" von Ravensburger.</p>
+    <p>Version wurde von Philip Grieger entwickelt. (© 2024).</p>
+</footer>
     
     <script src="script.js"></script>
 
