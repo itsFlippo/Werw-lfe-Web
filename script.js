@@ -1,5 +1,5 @@
 // Hintergrundmusik und Variablen
-let backgroundMusic = new Audio("hintergrundmusik/hintergrund.mp3"); // Pfad zur Hintergrundmusik
+let backgroundMusic = new Audio("Hintergrundmusik/hintergrund.mp3"); // Pfad zur Hintergrundmusik
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.6; // Lautstärke auf 50%
 
@@ -116,7 +116,7 @@ function playAudioSequence(sequence) {
         if (alwaysPlay || (condition && condition())) {
             if (audio) {
                 console.log(`Spiele Audio: ${audio}`);
-                currentAudio = new Audio(`rollenaudio/${audio}.mp3`);
+                currentAudio = new Audio(`Rollenaudio/${audio}.mp3`);
                 currentAudio.play();
                 currentAudio.onended = () => {
                     if (roles && roles.length > 0) {
@@ -157,7 +157,7 @@ function playRoleSequence(roles, callback) {
 
         if (checkbox && checkbox.checked) {
             console.log(`Spiele Rolle: ${role}`);
-            currentAudio = new Audio(`rollenaudio/${role}.mp3`);
+            currentAudio = new Audio(`Rollenaudio/${role}.mp3`);
             currentAudio.play();
             currentAudio.onended = playNextRole;
         } else {
