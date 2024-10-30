@@ -153,11 +153,11 @@ button.start-stop-button.disabled {
     }
 
     .role-card {
-        width: 100%; /* Karten ebenfalls volle Breite */
+        width: 90%; /* Karten ebenfalls volle Breite */
     }
 
     .role-card img {
-        width: 100%; /* Bilder nutzen die volle Breite der Karte */
-        min-width: 150px; /* Feste Mindestbreite für die Bilder */
+        width: 90%; /* Bilder nutzen die volle Breite der Karte */
+        min-width: 130px; /* Feste Mindestbreite für die Bilder */
     }
 }
