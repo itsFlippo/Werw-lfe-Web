@@ -144,20 +144,25 @@ button.start-stop-button.disabled {
     -webkit-text-size-adjust: 100%; /* Safari Textgröße fixieren */
 }
 
-/* Anpassen des Grids und der Karten für mobile Geräte */
+/* Anpassungen für mobile Geräte, 5 Karten pro Reihe */
 @media (max-width: 768px) {
     .role-grid {
-        max-width: 100%; /* Grid-Container nimmt den gesamten Bildschirm ein */
-        padding: 20px; /* Weniger Innenabstand */
-        gap: 40px; /* Weniger Abstand zwischen den Karten */
-    }
-
-    .role-card {
-        width: 75%; /* Karten ebenfalls volle Breite */
+        grid-template-columns: repeat(5, 1fr); /* Beibehaltung von 5 Spalten */
+        gap: 5px; /* Weniger Abstand zwischen den Karten */
+        max-width: 100%; /* Volle Breite des Containers */
+        padding: 5px; /* Weniger Innenabstand */
     }
 
     .role-card img {
-        width: 75%; /* Bilder nutzen die volle Breite der Karte */
-        min-width: 100px; /* Feste Mindestbreite für die Bilder */
+        width: 90%; /* Kleinere Bildgröße innerhalb der Karten */
+        height: auto;
+        min-width: 50px; /* Minimalbreite reduzieren für mobile Geräte */
+        border-radius: 4px; /* Kleinere Eckenabrundung */
+    }
+
+    /* Leichte Anpassung der Hover- und Auswahl-Effekte */
+    .role-card input[type="checkbox"]:checked + img {
+        transform: scale(1.05); /* Geringe Vergrößerung bei Auswahl */
+        box-shadow: 0 0 5px 2px #d11c03; /* Dezenterer Box-Schatten */
     }
 }
