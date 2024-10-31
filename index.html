@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Werwölfe</title> <!-- Titel der Website -->
+    <title>Werwölfe</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -10,8 +10,13 @@
 
     <!-- Header-Bereich -->
     <header>
-        <img src="Images/rollenauswahl.png" alt="Werwölfe - Schatten der Hölle" class="header-image">
+        <img src="Images/header.png" alt="Werwölfe - Schatten der Hölle" class="header-image">
     </header>
+
+    <!-- Bild über den Karten -->
+    <div class="top-image">
+        <img src="Images/rollenauswahl.png" alt="Rollenauswahl">
+    </div>
 
     <form id="role-selection">
         <!-- Der Rest deines Codes bleibt unverändert -->
@@ -196,6 +201,18 @@
             </div>
             <div class="role-card">
                 <label>
+                    <input type="checkbox" name="role" value="weise-eule">
+                    <img src="Karten/weiseeule.jpg" alt="Weise Eule">
+                </label>
+            </div>
+            <div class="role-card">
+                <label>
+                    <input type="checkbox" name="role" value="kobold">
+                    <img src="Karten/kobold.jpg" alt="Kobold">
+                </label>
+            </div>
+            <div class="role-card">
+                <label>
                     <input type="checkbox" name="role" value="rufer-der-toten">
                     <img src="Karten/ruferdertoten.jpg" alt="Rufer der Toten">
                 </label>
@@ -292,18 +309,6 @@
             </div>
             <div class="role-card">
                 <label>
-                    <input type="checkbox" name="role" value="kobold">
-                    <img src="Karten/kobold.jpg" alt="Kobold">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
-                    <input type="checkbox" name="role" value="weise-eule">
-                    <img src="Karten/weiseeule.jpg" alt="Weise Eule">
-                </label>
-            </div>
-            <div class="role-card">
-                <label>
                     <input type="checkbox" name="role" value="der-prophet">
                     <img src="Karten/derprophet.jpg" alt="Der Prophet">
                 </label>
@@ -358,19 +363,32 @@
             </div>
         </div>
 
+    <!-- Bild unter den Karten -->
+    <div class="bottom-image">
+        <img src="Images/abstimmungszeit.png" alt="Abstimmungszeit">
+    </div>
+
+    <!-- Zeitwahl-Buttons -->
+    <div class="time-buttons">
+        <button type="button" class="time-button" data-time="300">5</button>
+        <button type="button" class="time-button" data-time="420">7</button>
+        <button type="button" class="time-button selected" data-time="600">10</button> <!-- Standardauswahl -->
+        <button type="button" class="time-button" data-time="720">12</button>
+        <button type="button" class="time-button" data-time="900">15</button>
+    </div>
+
     <!-- Start-/Stop-Button Container -->
     <div class="button-container">
         <button type="button" id="start-stop-button" class="start-stop-button">Start</button>
     </div>
 
-<!-- Abschluss-Text -->
-<footer class="footer-text">
-    <p>Dieses Projekt ist eine Open-Source und beinhaltet geschützte Lizenzen.</p>
-    <p>Angepasst an das Original-Kartenspiel "Werwölfe - Vollmondnacht" von Ravensburger.</p>
-    <p>Version wurde von Philip Grieger entwickelt. (© 2024).</p>
-</footer>
-    
-    <script src="script.js"></script>
+    <!-- Abschluss-Text -->
+    <footer class="footer-text">
+        <p>Dieses Projekt ist eine Open-Source und beinhaltet geschützte Lizenzen.</p>
+        <p>Angepasst an das Original-Kartenspiel "Werwölfe - Vollmondnacht" von Ravensburger.</p>
+        <p>Version wurde von Philip Grieger entwickelt. (© 2024).</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
