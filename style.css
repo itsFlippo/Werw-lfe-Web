@@ -210,4 +210,15 @@ button.start-stop-button.disabled {
         min-width: 50px; /* Minimalbreite reduzieren für mobile Geräte */
         border-radius: 0; /* Keine Eckenabrundung */
     }
+
+    /* Anpassung der Hintergrundbilder */
+    .top-image img,
+    .bottom-image img {
+        width: 40%; /* Bildgröße in der mobilen Ansicht vergrößert */
+    }
+
+    /* Vergrößerung des Hintergrundbilds für mobile Ansicht */
+    body {
+        background-size: contain; /* Vergrößert Hintergrundbild auf kleineren Bildschirmen */
+    }
 }
