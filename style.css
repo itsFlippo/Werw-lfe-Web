@@ -148,16 +148,16 @@ button.start-stop-button.disabled {
 @media (max-width: 768px) {
     .role-grid {
         max-width: 100%; /* Grid-Container nimmt den gesamten Bildschirm ein */
-        padding: 10px; /* Weniger Innenabstand */
-        gap: 20px; /* Weniger Abstand zwischen den Karten */
+        padding: 20px; /* Weniger Innenabstand */
+        gap: 40px; /* Weniger Abstand zwischen den Karten */
     }
 
     .role-card {
-        width: 90%; /* Karten ebenfalls volle Breite */
+        width: 75%; /* Karten ebenfalls volle Breite */
     }
 
     .role-card img {
-        width: 90%; /* Bilder nutzen die volle Breite der Karte */
-        min-width: 130px; /* Feste Mindestbreite für die Bilder */
+        width: 75%; /* Bilder nutzen die volle Breite der Karte */
+        min-width: 100px; /* Feste Mindestbreite für die Bilder */
     }
 }
