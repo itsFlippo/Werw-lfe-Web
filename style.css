@@ -195,7 +195,7 @@ button.start-stop-button.disabled {
     -webkit-text-size-adjust: 100%; /* Safari Textgröße fixieren */
 }
 
-/* Anpassungen für mobile Geräte, 5 Karten pro Reihe */
+/* Anpassungen für mobile Geräte */
 @media (max-width: 768px) {
     .role-grid {
         grid-template-columns: repeat(5, 1fr);
@@ -207,18 +207,20 @@ button.start-stop-button.disabled {
     .role-card img {
         width: 100%; /* Volle Breite innerhalb der Karten */
         height: auto;
-        min-width: 50px; /* Minimalbreite reduzieren für mobile Geräte */
+        min-width: 50px; /* Minimalbreite für mobile Geräte */
         border-radius: 0; /* Keine Eckenabrundung */
     }
 
-    /* Anpassung der Hintergrundbilder */
+    /* Bilder über und unter den Karten auf volle Breite setzen */
     .top-image img,
     .bottom-image img {
-        width: 40%; /* Bildgröße in der mobilen Ansicht vergrößert */
+        width: 100%; /* Volle Breite für mobile Ansicht */
+        max-width: 100%; /* Stellt sicher, dass das Bild nicht eingeschränkt wird */
+        height: auto;
     }
 
-    /* Vergrößerung des Hintergrundbilds für mobile Ansicht */
+    /* Hintergrundbild an die gesamte Breite anpassen */
     body {
-        background-size: contain; /* Vergrößert Hintergrundbild auf kleineren Bildschirmen */
+        background-size: cover; /* Hintergrundbild passt sich der gesamten Breite an */
     }
 }
