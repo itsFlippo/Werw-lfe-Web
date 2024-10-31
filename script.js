@@ -1,14 +1,14 @@
 // Hintergrundmusik und Variablen
 let backgroundMusic = new Audio("Hintergrundmusik/hintergrund.mp3");
 backgroundMusic.loop = true;
-backgroundMusic.volume = 0.5; // Lautstärke auf 50%
+backgroundMusic.volume = 0.4; // Lautstärke auf 50%
 
 // Standard-Zeit für "gong" in Sekunden (10 Minuten)
 let gongDelay = 600;
 
 // Reihenfolge der Zeiten und Rollen in der Abspielreihenfolge
 const audioSequence = [
-    { audio: "start", roles: [], alwaysPlay: true },
+    { audio: "start", roles: [], alwaysPlay: true, delay: 5000 }, // 5 Sekunden Verzögerung
     { audio: null, roles: ["schutzengel"], condition: () => hasRole(["schutzengel"]) },
     { audio: null, roles: ["nachahmer"], condition: () => hasRole(["nachahmer"]) },
     { audio: "daemmerung", roles: [], condition: () => hasRole(["der-graf", "renfield", "infizierter", "venus", "anstifterin", "priester", "meuchler", "verliebte"]) },

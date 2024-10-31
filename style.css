@@ -223,4 +223,19 @@ button.start-stop-button.disabled {
     body {
         background-size: cover; /* Hintergrundbild passt sich der gesamten Breite an */
     }
+
+    /* Header-Bild für mobile Ansicht auf volle Breite setzen */
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header-image {
+        max-width: 100%; /* Volle Breite in der mobilen Ansicht */
+        width: 100%; /* Setzt die Breite auf 100% */
+        height: auto; /* Automatische Höhe entsprechend dem Seitenverhältnis */
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        -webkit-transition: opacity 0.3s ease; /* Safari Transition */
+    }
 }
